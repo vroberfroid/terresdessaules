@@ -1,0 +1,19 @@
+.container {
+  padding: 80px 120px;
+}
+
+$white: #fff;
+
+@media(max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+.carousel-inner img {
+  filter: grayscale(90%);
+  width: 100%;
+  margin: auto;
+}
+.carousel-caption h3 {
+  color: $white !important;
+}
