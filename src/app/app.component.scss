@@ -17,3 +17,31 @@ $white: #fff;
 .carousel-caption h3 {
   color: $white !important;
 }
+
+//colors
+$color_woodsmoke_approx: #111;
+
+//@extend-elements
+//original selectors
+//h3, h4
+%extend_1 {
+  margin: 10px 0 30px;
+  letter-spacing: 10px;
+  font-size: 20px;
+  color: $color_woodsmoke_approx;
+}
+
+
+h3 {
+  @extend %extend_1;
+}
+h4 {
+  @extend %extend_1;
+}
+.form-control {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+}
+textarea {
+  resize: none;
+}
