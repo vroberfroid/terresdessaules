@@ -1,43 +1,48 @@
 # Terresdessaules
 
-## Setut up
+## Set up
 - créer une instance d'un serveur Linux EC2 chez Amazon
 - installer nodejs depuis internet
-- ajouter ceci dans .bashrc: export PATH=$PATH:/home/ec2-user/prg/node-v10.15.0-linux-x64/bin
-- installer angular : npm install -g @angular/cli
-- créer le nouveau projet : ng new terresdessaules
+- ajouter ceci dans .bashrc: ``export PATH=$PATH:/home/ec2-user/prg/node-v10.15.0-linux-x64/bin``
+- installer angular : ``npm install -g @angular/cli``
+- créer le nouveau projet : ``ng new terresdessaules``
 - modifier angular.json et ajouter le port et le host 0.0.0.0:
-  "serve": {
+```
+   "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "terresdessaules:build",
             "port": 80,
             "host": "0.0.0.0"
           },
+```
 - ajouter une règle de sécurité dans l'instance: instance > click on launch-wizard-1 dans la colonne Security Group
   La règle est HTTP port 80 - Everyone
 - Démarer le projet en root (uniquement root peut activer port 80): sudo su -; ng serve
 - Ajout de nodejs comme un service
   Fichier /etc/systemd/system/nodejs.service à créer avec comme contenu:
-[Unit]
-Description=My NodeJS Service
-After=syslog.target network.target
+```
+    [Unit]
+    Description=My NodeJS Service
+    After=syslog.target network.target
 
-[Service]
-EnvironmentFile=/root/nodejs-env
-User=root
-Group=root
-WorkingDirectory=/home/ec2-user/angular/terresdessaules/
-ExecStart=/usr/bin/ng serve
-Restart=on-failure
-SuccessExitStatus=143
+    [Service]
+    EnvironmentFile=/root/nodejs-env
+    User=root
+    Group=root
+    WorkingDirectory=/home/ec2-user/angular/terresdessaules/
+    ExecStart=/usr/bin/ng serve
+    Restart=on-failure
+    SuccessExitStatus=143
 
-[Install]
-WantedBy=multi-user.target
-
-- Faire le lien symbolique : ln -s /home/ec2-user/prg/nodejs/bin/ng /usr/bin/ng
+    [Install]
+    WantedBy=multi-user.target
+```
+- Démarrer le service :  ``systemctl start nodejs.service``
+- Obtenir les logs du service: ``systemctl statue nodejs.service``
+- Faire le lien symbolique : ``ln -s /home/ec2-user/prg/nodejs/bin/ng /usr/bin/ng``
 - Check firewall redhat:
-    yum install firewalld
+    ``yum install firewalld``
 
 
 ## Angular HELP
