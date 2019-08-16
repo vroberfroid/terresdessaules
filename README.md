@@ -32,14 +32,14 @@
     Group=root
     WorkingDirectory=/home/ec2-user/angular/terresdessaules/
     ExecStart=/usr/bin/ng serve
-    Restart=on-failure
+    Restart=always
     SuccessExitStatus=143
 
     [Install]
     WantedBy=multi-user.target
 ```
 - Démarrer le service :  ``systemctl start nodejs.service``
-- Obtenir les logs du service: ``systemctl statue nodejs.service``
+- Obtenir les logs du service: ``systemctl status nodejs.service``
 - Faire le lien symbolique : ``ln -s /home/ec2-user/prg/nodejs/bin/ng /usr/bin/ng``
 - Check firewall redhat:
     ``yum install firewalld``
