@@ -9,6 +9,7 @@ import {RoutingModule} from './routing/routine.module';
 import { HomeComponent } from './home/home.component';
 import { GitesComponent } from './gites/gites.component';
 import { ActuComponent } from './actu/actu.component';
+import { CharteComponent } from './charte/charte.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ActuComponent } from './actu/actu.component';
     NavigationComponent,
     HomeComponent,
     GitesComponent,
-    ActuComponent
+    ActuComponent,
+    CharteComponent
   ],
   imports: [
     BrowserModule,
