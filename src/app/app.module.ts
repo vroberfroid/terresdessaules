@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { GitesComponent } from './gites/gites.component';
 import { ActuComponent } from './actu/actu.component';
 import { CharteComponent } from './charte/charte.component';
+import { StagesComponent } from './stages/stages.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CharteComponent } from './charte/charte.component';
     HomeComponent,
     GitesComponent,
     ActuComponent,
-    CharteComponent
+    CharteComponent,
+    StagesComponent
   ],
   imports: [
     BrowserModule,
