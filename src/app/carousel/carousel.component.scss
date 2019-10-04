@@ -8,6 +8,7 @@ $white: #fff;
 .carousel-inner img {
   //filter: grayscale(90%);
   width: 100%;
+  max-width: 800px;
   margin: auto;
 }
 .carousel-caption h3 {

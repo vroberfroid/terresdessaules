@@ -5,6 +5,7 @@ import {GitesComponent} from '../gites/gites.component';
 import {ActuComponent} from '../actu/actu.component';
 import {CharteComponent} from '../charte/charte.component';
 import {StagesComponent} from '../stages/stages.component';
+import {NousComponent} from '../nous/nous.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ export const appRoutes: Routes = [
   { path: 'charte',  component: CharteComponent },
   { path: 'stages',  component: StagesComponent },
   { path: 'gites',  component: GitesComponent },
-  { path: 'contact',  component: ContactComponent }
+  { path: 'contact',  component: ContactComponent },
+  { path: 'nous',  component: NousComponent }
 
   ];
