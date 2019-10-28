@@ -12,6 +12,7 @@ import { ActuComponent } from './actu/actu.component';
 import { CharteComponent } from './charte/charte.component';
 import { StagesComponent } from './stages/stages.component';
 import { NousComponent } from './nous/nous.component';
+import {GalleriaModule} from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NousComponent } from './nous/nous.component';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    GalleriaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

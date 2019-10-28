@@ -1,34 +1,10 @@
 <div class="container">
   <h2>Nos gîtes</h2>
   <div class="row">
-    <h3>Terre de haut</h3>
-    <div class="col-xs-12 col-lg-6">
-      <div class="thumbnail">
-        <a href="assets/img/terredehaut.jpg" target="_blank">
-          <img src="assets/img/terredehaut.jpg" alt="Terre de haut" style="width:100%">
-          <div class="caption">
-            <p>Terre de haut</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-xs-12 col-lg-6">
-      <p>
-        Terre de haut est notre gîte. Il n'est pas en location.
-      </p>
-      <br>
-    </div>
-  </div>
-  <div class="row">
     <h3>Terre de bas</h3>
     <div class="col-xs-12 col-lg-6">
       <div class="thumbnail">
-        <a href="assets/img/terredebas.jpg" target="_blank">
-          <img src="assets/img/terredebas.jpg" alt="Terre de bas" style="width:100%">
-          <div class="caption">
-            <p>Terre de bas</p>
-          </div>
-        </a>
+        <p-galleria [images]="imagesTB" panelWidth="100%" panelHeight="480" [showCaption]="true" autoPlay="false" transitionInterval="10000"></p-galleria>
       </div>
     </div>
     <div class="col-xs-12 col-lg-6">
@@ -53,6 +29,22 @@
         95 euros la nuit, 630 euros la semaine
         Charges comprises (eau-électricité-chauffage)
 
+    </div>
+  </div>
+  <div class="row">
+    <h3>Terre de haut</h3>
+    <div class="col-xs-12 col-lg-6">
+      <div class="thumbnail">
+        <p-galleria [images]="imagesTH" panelWidth="100%" panelHeight="480" [showCaption]="true" autoPlay="false" transitionInterval="10000"></p-galleria>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <p>
+        Ensemble de gîtes, chambres et grande salle de partage pour une capacité d’accueil de 12 à 14 personnes. Le tout est en construction. La fin des travaux est prévue en 2021.
+        Pour l’instant la maison est la salle de jeux des enfants ainsi qu’un lieu d’accueil chaleureux pour nos familles et nos amis.
+      </p>
+      <br>
     </div>
   </div>
   <h3>La tente</h3>
