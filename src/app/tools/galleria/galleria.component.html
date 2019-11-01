@@ -1,0 +1,21 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <img [src]="imageSelected.source" [(ngModel)]="imageSelected" ngDefaultControl  width="100%" style="margin-bottom: 10px;"/>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <span  *ngFor="let imgSrc of images">
+        <img
+             [src]="imgSrc.source"
+             height="50px"
+             [ngStyle]="{'margin-right': '4px', 'opacity': imgSrc.opacity}"
+             (click)="onImageSelected(imgSrc)"
+             (mouseover)="onMouseOver(imgSrc)"
+             (mouseleave)="onMouseLeave(imgSrc)"/>
+      </span>
+    </div>
+  </div>
+</div>

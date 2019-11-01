@@ -15,7 +15,6 @@ export class GitesComponent implements OnInit {
   ngOnInit() {
     this.imagesTB = [];
     this.imagesTB.push({source: 'assets/img/terredebas4.jpg'});
-    // this.imagesTB.push({source: 'assets/img/terredebas1.jpg', alt: 'Description for Image 1', title: 'Title 1'});
     this.imagesTB.push({source: 'assets/img/terredebas1.jpg'});
     this.imagesTB.push({source: 'assets/img/terredebas2.jpg'});
     this.imagesTB.push({source: 'assets/img/terredebas3.jpg'});

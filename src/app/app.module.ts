@@ -13,6 +13,8 @@ import { CharteComponent } from './charte/charte.component';
 import { StagesComponent } from './stages/stages.component';
 import { NousComponent } from './nous/nous.component';
 import {GalleriaModule} from 'primeng/galleria';
+import { GalleriaComponent } from './tools/galleria/galleria.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import {GalleriaModule} from 'primeng/galleria';
     ActuComponent,
     CharteComponent,
     StagesComponent,
-    NousComponent
+    NousComponent,
+    GalleriaComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    GalleriaModule
+    GalleriaModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
