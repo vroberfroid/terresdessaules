@@ -41,7 +41,7 @@
     <div class="row">
       <h3>Terre de haut</h3>
       <div class="col-xs-12 col-lg-6">
-        <app-galleria [images]="imagesTH"></app-galleria>
+        <app-galleria [images]="imagesTH" (onClickSelectedImage)="onClickImage($event)"></app-galleria>
       </div>
 
       <div class="col-xs-12 col-lg-6">
