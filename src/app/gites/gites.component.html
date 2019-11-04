@@ -1,19 +1,28 @@
-<div class="container">
-  <h2>Nos gîtes</h2>
-  <div class="row">
-    <h3>Terre de bas</h3>
-    <div class="col-xs-12 col-lg-6">
-        <app-galleria [images]="imagesTB" ></app-galleria>
-    </div>
-    <div class="col-xs-12 col-lg-6">
-      <p>
-        Terre de bas est un gîte aménagé avec cœur permettant d’accueillir un couple ou une petite famille.
-      </p>
+
+<div *ngIf="imageSourceClicked">
+  <button type="button" class="close close-popup" aria-label="Close" (click)="onCloseImage()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <img [src]="imageSourceClicked" width="100%" class="popup"/>
+</div>
+
+<div *ngIf="!imageSourceClicked">
+  <div class="container">
+    <h2>Nos gîtes</h2>
+    <div class="row">
+      <h3>Terre de bas</h3>
+      <div class="col-xs-12 col-lg-6">
+        <app-galleria [images]="imagesTB" (onClickSelectedImage)="onClickImage($event)"></app-galleria>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <p>
+          Terre de bas est un gîte aménagé avec cœur permettant d’accueillir un couple ou une petite famille.
+        </p>
         <br>
         <h4>Composition:</h4><br>
         <dl>
-      <dt>Pièce principale:</dt>
-      <dd>Cuisine bien équipée</dd>
+          <dt>Pièce principale:</dt>
+          <dd>Cuisine bien équipée</dd>
           <dd>Table et chaises</dd>
           <dd>Lit de 1m60, literie confortable</dd>
           <dd>Lit « cabane » de 1m20 pour 1 ou 2 enfants</dd>
@@ -21,43 +30,47 @@
           <dt>Salle-de-douche avec toilettes</dt>
           <dd>Douche confortable</dd>
           <dd>Sèche-cheveux</dd>
-    </dl>
+        </dl>
 
-      <h4>Tarif:</h4>
+        <h4>Tarif:</h4>
         95 euros la nuit, 630 euros la semaine
         Charges comprises (eau-électricité-chauffage)
 
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <h3>Terre de haut</h3>
-    <div class="col-xs-12 col-lg-6">
-        <app-galleria [images]="imagesTH" ></app-galleria>
-    </div>
+    <div class="row">
+      <h3>Terre de haut</h3>
+      <div class="col-xs-12 col-lg-6">
+        <app-galleria [images]="imagesTH"></app-galleria>
+      </div>
 
-    <div class="col-xs-12 col-lg-6">
-      <p>
-        Ensemble de gîtes, chambres et grande salle de partage pour une capacité d’accueil de 12 à 14 personnes. Le tout est en construction. La fin des travaux est prévue en 2021.
-        Pour l’instant la maison est la salle de jeux des enfants ainsi qu’un lieu d’accueil chaleureux pour nos familles et nos amis.
-      </p>
-      <br>
+      <div class="col-xs-12 col-lg-6">
+        <p>
+          Ensemble de gîtes, chambres et grande salle de partage pour une capacité d’accueil de 12 à 14 personnes. Le
+          tout est en construction. La fin des travaux est prévue en 2021.
+          Pour l’instant la maison est la salle de jeux des enfants ainsi qu’un lieu d’accueil chaleureux pour nos
+          familles et nos amis.
+        </p>
+        <br>
+      </div>
     </div>
-  </div>
-  <h3>La tente</h3>
-  <div class="row">
-    <div class="col-xs-12 col-lg-6">
+    <h3>La tente</h3>
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
         <a href="assets/img/tente.jpg" target="_blank">
           <img src="assets/img/tente.jpg" alt="La tente" style="width:100%">
         </a>
-    </div>
+      </div>
 
 
-    <div class="col-xs-12 col-lg-6">
-      <p>
-        Pour les grandes familles, nous proposons une grande et charmante tente berbère équipée d’un poêle à bois. Les enfants l’ adorent et peuvent y dormir confortablement à 4.
-      </p>
-      <h4>Tarif:</h4>
-      15 euros la nuit, 100 euros la semaine
+      <div class="col-xs-12 col-lg-6">
+        <p>
+          Pour les grandes familles, nous proposons une grande et charmante tente berbère équipée d’un poêle à bois. Les
+          enfants l’ adorent et peuvent y dormir confortablement à 4.
+        </p>
+        <h4>Tarif:</h4>
+        15 euros la nuit, 100 euros la semaine
+      </div>
     </div>
   </div>
 </div>

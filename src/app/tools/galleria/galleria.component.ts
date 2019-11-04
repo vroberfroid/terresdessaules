@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {forEach} from '@angular/router/src/utils/collection';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-galleria',
@@ -9,6 +8,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 export class GalleriaComponent implements OnInit {
   imageSelected: VRImage;
   @Input() images: VRImage[];
+  @Output() onClickSelectedImage: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -29,5 +29,9 @@ export class GalleriaComponent implements OnInit {
 
   onMouseLeave(imgSrc: VRImage) {
     imgSrc.opacity = '0.5';
+  }
+
+  onClickImageSelected() {
+   this.onClickSelectedImage.emit({event: event, image: this.imageSelected});
   }
 }

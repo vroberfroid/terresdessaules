@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitesComponent implements OnInit {
 
+  imageSourceClicked: string;
   imagesTB: any[];
   imagesTH: any[];
 
@@ -27,4 +28,12 @@ export class GitesComponent implements OnInit {
     this.imagesTH.push({source: 'assets/img/terredehaut3.jpg'});
   }
 
+
+  onClickImage(event: any) {
+     this.imageSourceClicked = event.image.source;
+  }
+
+  onCloseImage() {
+    this.imageSourceClicked = null;
+  }
 }
