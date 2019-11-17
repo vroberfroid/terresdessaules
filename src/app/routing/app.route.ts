@@ -1,11 +1,12 @@
-import {ContactComponent} from '../contact/contact.component';
+import {ContactComponent} from '../components/contact/contact.component';
 import {Routes} from '@angular/router';
-import {HomeComponent} from '../home/home.component';
-import {GitesComponent} from '../gites/gites.component';
-import {ActuComponent} from '../actu/actu.component';
-import {CharteComponent} from '../charte/charte.component';
-import {StagesComponent} from '../stages/stages.component';
-import {NousComponent} from '../nous/nous.component';
+import {HomeComponent} from '../components/home/home.component';
+import {GitesComponent} from '../components/gites/gites.component';
+import {ActuComponent} from '../components/actu/actu.component';
+import {CharteComponent} from '../components/charte/charte.component';
+import {StagesComponent} from '../components/stages/stages.component';
+import {NousComponent} from '../components/nous/nous.component';
+import {MenuComponent} from '../components/menu/menu.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,6 @@ export const appRoutes: Routes = [
   { path: 'stages',  component: StagesComponent },
   { path: 'gites',  component: GitesComponent },
   { path: 'contact',  component: ContactComponent },
-  { path: 'nous',  component: NousComponent }
-
+  { path: 'nous',  component: NousComponent },
+  { path: 'menu',  component: MenuComponent }
   ];

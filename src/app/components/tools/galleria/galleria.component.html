@@ -1,0 +1,39 @@
+<!--<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document" [style.width]="getSelectedImageWidthContainer()" [style.height]="getSelectedImageHeightContainer()">-->
+<!--      <div class="modal-body">-->
+<!--        <img [src]="imageSourceClicked" [style.width]="getSelectedImageWidth()" [style.height]="getSelectedImageHeight()"/>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img [src]="imageSelected.source"
+           [(ngModel)]="imageSelected"
+           ngDefaultControl
+           width="100%"
+           style="margin-bottom: 10px;"
+           (click)="onClickImageSelected($event)"
+           data-toggle="modal"
+           data-target="#exampleModalCenter"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <span *ngFor="let imgSrc of images">
+        <img
+          (load)="loadedImg($event, imgSrc)"
+          [src]="imgSrc.source"
+          height="50px"
+          [ngStyle]="{'margin-right': '4px', 'opacity': imgSrc.opacity}"
+          (click)="onImageSelected(imgSrc)"
+          (mouseover)="onMouseOver(imgSrc)"
+          (mouseleave)="onMouseLeave(imgSrc)"/>
+      </span>
+    </div>
+  </div>
+</div>
+

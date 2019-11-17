@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnChanges, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-gites',
@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitesComponent implements OnInit {
 
-  imageSourceClicked: string;
   imagesTB: any[];
   imagesTH: any[];
 
@@ -29,11 +28,5 @@ export class GitesComponent implements OnInit {
   }
 
 
-  onClickImage(event: any) {
-     this.imageSourceClicked = event.image.source;
-  }
 
-  onCloseImage() {
-    this.imageSourceClicked = null;
-  }
 }

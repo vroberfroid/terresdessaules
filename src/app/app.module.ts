@@ -2,19 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { ContactComponent } from './contact/contact.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import {RoutingModule} from './routing/routine.module';
-import { HomeComponent } from './home/home.component';
-import { GitesComponent } from './gites/gites.component';
-import { ActuComponent } from './actu/actu.component';
-import { CharteComponent } from './charte/charte.component';
-import { StagesComponent } from './stages/stages.component';
-import { NousComponent } from './nous/nous.component';
+import { HomeComponent } from './components/home/home.component';
+import { GitesComponent } from './components/gites/gites.component';
+import { ActuComponent } from './components/actu/actu.component';
+import { CharteComponent } from './components/charte/charte.component';
+import { StagesComponent } from './components/stages/stages.component';
+import { NousComponent } from './components/nous/nous.component';
 import {GalleriaModule} from 'primeng/galleria';
-import { GalleriaComponent } from './tools/galleria/galleria.component';
+import { GalleriaComponent } from './components/tools/galleria/galleria.component';
 import {FormsModule} from '@angular/forms';
+import {ImageService} from './services/shared/image.service';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {FormsModule} from '@angular/forms';
     CharteComponent,
     StagesComponent,
     NousComponent,
-    GalleriaComponent
+    GalleriaComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import {FormsModule} from '@angular/forms';
     GalleriaModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ ImageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

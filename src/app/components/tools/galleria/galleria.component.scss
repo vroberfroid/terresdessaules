@@ -1,11 +1,9 @@
-.popup {
-  z-index: 1060;
-  position: absolute;
+.modal-dialog {
+  width: auto;
+  margin: unset;
 }
-
 .close-popup {
   position: absolute;
   z-index: 1090;
-  right: 0;
   font-size: 50px;
 }
