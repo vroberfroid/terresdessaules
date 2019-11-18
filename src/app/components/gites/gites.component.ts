@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnChanges, OnInit, ViewChild} from '@angular/core';
+import { Component,  OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gites',
@@ -9,6 +9,7 @@ export class GitesComponent implements OnInit {
 
   imagesTB: any[];
   imagesTH: any[];
+  imagesTT: any[];
 
   constructor() { }
 
@@ -25,6 +26,10 @@ export class GitesComponent implements OnInit {
     this.imagesTH.push({source: 'assets/img/terredehaut1.jpg'});
     this.imagesTH.push({source: 'assets/img/terredehaut2.jpg'});
     this.imagesTH.push({source: 'assets/img/terredehaut3.jpg'});
+
+    this.imagesTT = [];
+    this.imagesTT.push({source: 'assets/img/tente.jpg'});
+    this.imagesTT.push({source: 'assets/img/tente2.jpg'});
   }
 
 
