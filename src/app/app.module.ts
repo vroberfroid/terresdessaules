@@ -8,7 +8,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import {RoutingModule} from './routing/routine.module';
 import { HomeComponent } from './components/home/home.component';
 import { GitesComponent } from './components/gites/gites.component';
-import { ActuComponent } from './components/actu/actu.component';
+import { LinksComponent } from './components/links/links.component';
 import { CharteComponent } from './components/charte/charte.component';
 import { StagesComponent } from './components/stages/stages.component';
 import { NousComponent } from './components/nous/nous.component';
@@ -26,7 +26,7 @@ import { MenuComponent } from './components/menu/menu.component';
     NavigationComponent,
     HomeComponent,
     GitesComponent,
-    ActuComponent,
+    LinksComponent,
     CharteComponent,
     StagesComponent,
     NousComponent,

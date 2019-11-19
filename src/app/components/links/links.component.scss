@@ -1,13 +1,14 @@
-div.bckgstages {
+div.bckglinks {
   height: 100%;
-  width: 100%;
   position: fixed;
   background-image: url('../../../assets/img/actualites.jpg');
   background-repeat: no-repeat;
 }
 
-div.container {
-  p {
-    margin-top: 80px;
+li {
+  padding-top: 30px;
+  a {
+    display: block;
+
   }
 }
