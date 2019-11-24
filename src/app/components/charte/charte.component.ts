@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-charte',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharteComponent implements OnInit {
 
+  @ViewChild('content') elementView: ElementRef;
+
   constructor() { }
 
   ngOnInit() {
+    console.log('on init:' + this.elementView.nativeElement.offsetHeight);
   }
 
+
+  getStyleHeight(): string {
+    return this.elementView.nativeElement.offsetHeight + 200 + 'px';
+  }
 }

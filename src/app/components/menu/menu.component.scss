@@ -1,11 +1,26 @@
 $break-small: 320px;
 $break-large: 1200px;
 
+ul.transbox {
+  width:300px;
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  li {
+    span {
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
 div.background {
   background-size: cover;
   background-position: center center;
-  background-image: url(../../../assets/img/menu.jpg);
+  background-image: url(../../../assets/img/menu2.jpg);
   background-repeat:   no-repeat;
+  text-align: -webkit-center;
 }
 span.menu-txt {
   letter-spacing: 3px !important;

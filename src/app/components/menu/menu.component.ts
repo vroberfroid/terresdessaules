@@ -12,4 +12,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  getStyle(): string {
+    return window.innerHeight + 'px';
+  }
+
 }
