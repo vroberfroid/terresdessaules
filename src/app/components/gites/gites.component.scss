@@ -9,3 +9,11 @@ h3 {
   margin-left: 20px;
 }
 
+div.background {
+  background-size: cover;
+  background-position: center center;
+  background-image: url(../../../assets/img/gite.jpg);
+  data-parallax-speed: "0.8";
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

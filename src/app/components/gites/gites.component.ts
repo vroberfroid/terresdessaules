@@ -30,5 +30,7 @@ export class GitesComponent implements OnInit {
   }
 
 
+  getStyleHeight() {
 
+  }
 }
