@@ -17,6 +17,7 @@ import { GalleriaComponent } from './components/tools/galleria/galleria.componen
 import {FormsModule} from '@angular/forms';
 import {ImageService} from './services/shared/image.service';
 import { MenuComponent } from './components/menu/menu.component';
+import { ChangeOpacityOnmouseoverDirective } from './change-opacity-onmouseover.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MenuComponent } from './components/menu/menu.component';
     StagesComponent,
     NousComponent,
     GalleriaComponent,
-    MenuComponent
+    MenuComponent,
+    ChangeOpacityOnmouseoverDirective
   ],
   imports: [
     BrowserModule,

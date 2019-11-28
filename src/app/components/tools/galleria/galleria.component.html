@@ -30,8 +30,8 @@
           height="50px"
           [ngStyle]="{'margin-right': '4px', 'opacity': imgSrc.opacity}"
           (click)="onImageSelected(imgSrc)"
-          (mouseover)="onMouseOver(imgSrc)"
-          (mouseleave)="onMouseLeave(imgSrc)"/>
+          appChangeOpacityOnmouseover
+         />
       </span>
     </div>
   </div>

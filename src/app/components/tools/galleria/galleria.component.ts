@@ -31,14 +31,6 @@ export class GalleriaComponent implements OnInit {
     this.imageSelected = imgSrc;
   }
 
-  onMouseOver(imgSrc: VRImage) {
-     imgSrc.opacity = '1';
-  }
-
-  onMouseLeave(imgSrc: VRImage) {
-    imgSrc.opacity = '0.5';
-  }
-
   loadedImg(event: Event, image: VRImage) {
      image.width = (<HTMLImageElement>event.target).width;
      image.height = (<HTMLImageElement>event.target).height;
