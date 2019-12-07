@@ -7,6 +7,9 @@ import {CharteComponent} from '../components/charte/charte.component';
 import {StagesComponent} from '../components/stages/stages.component';
 import {NousComponent} from '../components/nous/nous.component';
 import {MenuComponent} from '../components/menu/menu.component';
+import {NotFoundComponent} from '../components/not-found/not-found.component';
+import {AdminComponent} from '../components/admin/admin/admin.component';
+import {AdminGuard} from './admin.guard';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,5 +20,8 @@ export const appRoutes: Routes = [
   { path: 'gites',  component: GitesComponent },
   { path: 'contact',  component: ContactComponent },
   { path: 'nous',  component: NousComponent },
-  { path: 'menu',  component: MenuComponent }
+  { path: 'menu',  component: MenuComponent },
+  { path: 'not-found', component: NotFoundComponent},
+  { path: 'admin', canActivate: [AdminGuard], component: AdminComponent},
+  { path: '**', redirectTo: 'not-found'}
   ];

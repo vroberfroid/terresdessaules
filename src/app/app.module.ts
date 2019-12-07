@@ -18,6 +18,9 @@ import {FormsModule} from '@angular/forms';
 import {ImageService} from './services/shared/image.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { ChangeOpacityOnmouseoverDirective } from './change-opacity-onmouseover.directive';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import {RightService} from './services/shared/right.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { ChangeOpacityOnmouseoverDirective } from './change-opacity-onmouseover.
     NousComponent,
     GalleriaComponent,
     MenuComponent,
-    ChangeOpacityOnmouseoverDirective
+    ChangeOpacityOnmouseoverDirective,
+    NotFoundComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import { ChangeOpacityOnmouseoverDirective } from './change-opacity-onmouseover.
     GalleriaModule,
     FormsModule
   ],
-  providers: [ ImageService ],
+  providers: [ ImageService, RightService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

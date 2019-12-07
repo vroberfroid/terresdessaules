@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.route';
+import {AdminGuard} from './admin.guard';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import {appRoutes} from './app.route';
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    AdminGuard
   ]
 })
 export class RoutingModule {
