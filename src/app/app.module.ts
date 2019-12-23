@@ -12,15 +12,16 @@ import { LinksComponent } from './components/links/links.component';
 import { CharteComponent } from './components/charte/charte.component';
 import { StagesComponent } from './components/stages/stages.component';
 import { NousComponent } from './components/nous/nous.component';
-import {GalleriaModule} from 'primeng/galleria';
 import { GalleriaComponent } from './components/tools/galleria/galleria.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ImageService} from './services/shared/image.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { ChangeOpacityOnmouseoverDirective } from './change-opacity-onmouseover.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminComponent } from './components/admin/admin/admin.component';
 import {RightService} from './services/shared/right.service';
+import { EditorComponent } from './components/admin/editor/editor.component';
+import {NgxMdModule} from 'ngx-md';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,15 @@ import {RightService} from './services/shared/right.service';
     MenuComponent,
     ChangeOpacityOnmouseoverDirective,
     NotFoundComponent,
-    AdminComponent
+    AdminComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    GalleriaModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxMdModule.forRoot()
   ],
   providers: [ ImageService, RightService ],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RightService} from '../../../services/shared/right.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rightService: RightService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  onLogin() {
+    this.rightService.login();
+  }
+
+  onLogout() {
+    this.rightService.logout();
+    this.router.navigate(['admin']);
+  }
 }

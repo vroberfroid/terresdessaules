@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'app-charte',
@@ -7,7 +8,7 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 })
 export class CharteComponent implements OnInit {
 
-  @ViewChild('content') elementView: ElementRef;
+  @ViewChild('content', {static: false}) elementView: ElementRef;
 
   constructor() { }
 
