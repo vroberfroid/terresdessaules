@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,9 @@ import { AdminComponent } from './components/admin/admin/admin.component';
 import {RightService} from './services/shared/right.service';
 import { EditorComponent } from './components/admin/editor/editor.component';
 import {NgxMdModule} from 'ngx-md';
+import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MyHammerConfig} from '../my-hammer.config';
 
 @NgModule({
   declarations: [
@@ -47,9 +50,18 @@ import {NgxMdModule} from 'ngx-md';
     RoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    NgbModule,
     NgxMdModule.forRoot()
   ],
-  providers: [ ImageService, RightService ],
+  providers: [
+    ImageService,
+    RightService,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
