@@ -20,4 +20,8 @@ export class CharteComponent implements OnInit {
   getStyleHeight(): string {
     return this.elementView.nativeElement.offsetHeight + 200 + 'px';
   }
+
+  onSwipe(event: any) {
+    console.log(event);
+  }
 }

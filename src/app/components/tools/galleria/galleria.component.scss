@@ -7,3 +7,15 @@
   z-index: 1090;
   font-size: 50px;
 }
+.slider {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.slide {
+  width: 500px;
+  flex-shrink: 0;
+  height: 100%;
+}
