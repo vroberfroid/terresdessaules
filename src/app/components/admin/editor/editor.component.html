@@ -1,8 +1,10 @@
-<form [formGroup]="nousForm">
+<form [formGroup]="nousForm" (ngSubmit)="onSubmit({name: 'marie', content: marie})">
   <textarea [rows]="5" [cols]="200" formControlName="marie"></textarea>
-
+  <button class="btn btn-primary">Submit</button>
 </form>
 
 Result:
 <ngx-md [data]="marie">
 </ngx-md>
+
+
