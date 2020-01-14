@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ImageService} from '../../../services/shared/image.service';
 import {VRImage} from '../../../models/image.model';
 import {animate, keyframes, transition, trigger} from '@angular/animations';

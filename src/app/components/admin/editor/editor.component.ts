@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Subscription} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
 import {MdContent} from '../../../models/mdcontent.model';
 import {MdContentService} from '../../../services/mdcontent.service';
 
