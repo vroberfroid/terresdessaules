@@ -1,5 +1,5 @@
 import {ContactComponent} from '../components/contact/contact.component';
-import {Routes} from '@angular/router';
+import {ExtraOptions, Routes} from '@angular/router';
 import {HomeComponent} from '../components/home/home.component';
 import {GitesComponent} from '../components/gites/gites.component';
 import {LinksComponent} from '../components/links/links.component';
@@ -11,6 +11,12 @@ import {NotFoundComponent} from '../components/not-found/not-found.component';
 import {AdminComponent} from '../components/admin/admin/admin.component';
 import {AdminGuard} from './admin.guard';
 import {EditorComponent} from '../components/admin/editor/editor.component';
+
+export const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 64],
+};
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

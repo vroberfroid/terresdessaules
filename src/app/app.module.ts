@@ -25,6 +25,7 @@ import {NgxMdModule} from 'ngx-md';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MyHammerConfig} from '../my-hammer.config';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {MyHammerConfig} from '../my-hammer.config';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    BrowserAnimationsModule,
     NgxMdModule.forRoot()
   ],
   providers: [

@@ -1,4 +1,4 @@
-<form [formGroup]="nousForm" (ngSubmit)="onSubmit({name: 'marie', content: marie})">
+<form [formGroup]="nousForm" (ngSubmit)="onSubmit( 'marie', marie)">
   <textarea [rows]="5" [cols]="200" formControlName="marie"></textarea>
   <button class="btn btn-primary">Submit</button>
 </form>

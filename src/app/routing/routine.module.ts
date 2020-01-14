@@ -1,15 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {appRoutes} from './app.route';
+import {appRoutes, routerOptions} from './app.route';
 import {AdminGuard} from './admin.guard';
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {
-        enableTracing: false
-      }
+      routerOptions
     ),
   ],
   exports: [

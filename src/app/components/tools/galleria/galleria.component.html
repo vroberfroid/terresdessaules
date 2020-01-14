@@ -11,30 +11,47 @@
   <div class="row">
     <div class="col-xs-12 col-lg-6">
       <div class="slider">
-        <div *ngFor="let imgSrc of images" class="slide">
-          <img [src]="imgSrc.source"
-               [(ngModel)]="imageSelected"
-               ngDefaultControl
-               style="margin-bottom: 10px; height: 100%"
-               (click)="onClickImageSelected($event)"
-               data-toggle="modal"
-               data-target="#exampleModalCenter"
-          />
-        </div>
+        <img [@cardAnimator]="animationExitState" height="300px"
+             (@cardAnimator.done)="resetAnimationState()"
+             (swipeleft)="startAnimation('slideOutLeft')"
+             (swiperight)="startAnimation('slideOutRight')"
+             [ngClass]="getOutClass()"
+             src="{{images[activeImage].source}}"/>
+        <img height="300px"
+             *ngFor="let img of images | slice:activeImage+1; index as i"
+             [@cardAnimator]="animationInRightState"
+             (@cardAnimator.done)="resetAnimationState()"
+             [src]="img.source"
+             [ngClass]="getInRightClass(i + activeImage + 1)"/>
+        <img height="300px"
+             *ngFor="let img of images | slice:0:activeImage; index as i"
+             [@cardAnimator]="animationInLeftState"
+             (@cardAnimator.done)="resetAnimationState()"
+             [src]="img.source"
+             [ngClass]="getInLeftClass(i)"/>
       </div>
+<!--      <img [src]="imageSelected.source"-->
+<!--           [(ngModel)]="imageSelected"-->
+<!--           ngDefaultControl-->
+<!--           width="100%"-->
+<!--           style="margin-bottom: 10px;"-->
+<!--           (click)="onClickImageSelected($event)"-->
+<!--           data-toggle="modal"-->
+<!--           data-target="#exampleModalCenter"-->
+<!--      />-->
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-6">
-      <span *ngFor="let imgSrc of images">
+      <span *ngFor="let imgSrc of images; index as i">
         <img
           (load)="loadedImg($event, imgSrc)"
           [src]="imgSrc.source"
           height="50px"
           [ngStyle]="{'margin-right': '4px', 'opacity': imgSrc.opacity}"
-          (click)="onImageSelected(imgSrc)"
+          (click)="onImageSelected(i)"
           appChangeOpacityOnmouseover
-        />
+         />
       </span>
     </div>
   </div>

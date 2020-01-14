@@ -3,7 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {MdContent} from '../../../models/mdcontent.model';
-import {map} from 'rxjs/operators';
+import {MdContentService} from '../../../services/mdcontent.service';
 
 @Component({
   selector: 'app-editor',
@@ -12,12 +12,11 @@ import {map} from 'rxjs/operators';
 })
 export class EditorComponent implements OnInit, OnDestroy {
 
-  url = 'http://localhost:8080/content';
   nousForm: FormGroup;
 
-  marie = '# Originaire';
+  marie = 'Loading...';
   subscription: Subscription;
-  constructor(private http: HttpClient) { }
+  constructor(private contentService: MdContentService) { }
 
   ngOnInit() {
 
@@ -26,7 +25,7 @@ export class EditorComponent implements OnInit, OnDestroy {
       'cedric': new FormControl(null),
       'kids' : new FormControl(null)});
 
-    this.http.get<MdContent>(this.url + '?name=marie')
+    this.contentService.get('marie')
       .subscribe( (data: MdContent) => {
         this.marie = data.content;
         this.nousForm.get('marie').patchValue(this.marie);
@@ -40,8 +39,8 @@ export class EditorComponent implements OnInit, OnDestroy {
         });
   }
 
-  onSubmit(postData: {name: string, content: string}) {
-    this.http.put(this.url + '/update', postData).subscribe( responseData => {
+  onSubmit(name: string, content: string) {
+    this.contentService.update(name, content).subscribe( responseData => {
       console.log(responseData);
     });
   }

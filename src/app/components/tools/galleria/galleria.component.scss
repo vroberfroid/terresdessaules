@@ -7,6 +7,16 @@
   z-index: 1090;
   font-size: 50px;
 }
+.disappear {
+  display:none;
+  z-index: 1;
+}
+.appear {
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
+
 .slider {
   width: 300px;
   height: 300px;
@@ -14,12 +24,4 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-}
-.slide {
-  width: 500px;
-  flex-shrink: 0;
-  height: 100%;
-}
-.slides > div {
-  scroll-snap-align: start;
 }
