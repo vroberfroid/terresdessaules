@@ -20,6 +20,7 @@ import * as kf from './keyframe';
 export class GalleriaComponent implements OnInit {
 
   @Input() images: VRImage[];
+  imageHeight = 300;
   imageSourceClicked: string;
   imageClicked: VRImage;
   heightOfSelectedImage: number;
@@ -35,14 +36,12 @@ export class GalleriaComponent implements OnInit {
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
-    for (const img of this.images) {
-      img.opacity = '0.5';
-    }
-
+    this.changeOpacity(this.activeImage);
   }
 
   onImageSelected(i: number) {
     this.activeImage = i;
+    this.changeOpacity(this.activeImage);
   }
 
   loadedImg(event: Event, image: VRImage) {
@@ -105,7 +104,9 @@ export class GalleriaComponent implements OnInit {
       } else {
         this.activeImage = this.activeImage === 0 ? this.images.length - 1 : this.activeImage - 1;
       }
+      this.changeOpacity(this.activeImage);
     }
+
     this.animationExitState = '';
     this.animationInRightState = '';
     this.animationInLeftState = '';
@@ -130,5 +131,27 @@ export class GalleriaComponent implements OnInit {
       return 'disappear';
     }
 
+  }
+
+  onMouseOver(imgSrc: VRImage) {
+    imgSrc.opacity = '1';
+  }
+
+  onMouseLeave(imgSrc: VRImage) {
+    if (imgSrc.source !== this.images[this.activeImage].source) {
+      imgSrc.opacity = '0.5';
+    }
+  }
+
+  changeOpacity(i: number) {
+    let k = 0;
+    for (const img of this.images) {
+      if ( k === i ) {
+        img.opacity = '1';
+      } else {
+        img.opacity = '0.5';
+      }
+      k++;
+    }
   }
 }
