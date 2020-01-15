@@ -18,10 +18,10 @@
 }
 
 .slider {
-  width: 300px;
   height: 300px;
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  img {
+    height: inherit;
+    max-width: -webkit-fill-available;
+    object-fit: cover;
+  }
 }

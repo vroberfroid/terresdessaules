@@ -16,21 +16,18 @@
              (swipeleft)="startAnimation('slideOutLeft')"
              (swiperight)="startAnimation('slideOutRight')"
              [ngClass]="getOutClass()"
-             [height]="imageHeight"
              src="{{images[activeImage].source}}"/>
         <img
              *ngFor="let img of images | slice:activeImage+1; index as i"
              [@cardAnimator]="animationInRightState"
              (@cardAnimator.done)="resetAnimationState()"
              [src]="img.source"
-             [height]="imageHeight"
              [ngClass]="getInRightClass(i + activeImage + 1)"/>
         <img
              *ngFor="let img of images | slice:0:activeImage; index as i"
              [@cardAnimator]="animationInLeftState"
              (@cardAnimator.done)="resetAnimationState()"
              [src]="img.source"
-             [height]="imageHeight"
              [ngClass]="getInLeftClass(i)"/>
       </div>
 <!--      <img [src]="imageSelected.source"-->
