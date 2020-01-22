@@ -1,4 +1,3 @@
-<div class="background">
 <div class="container" [style.height]="getStyleHeight()">
   <h2>Nos gîtes</h2>
   <p>
@@ -11,12 +10,9 @@
     Terre-de-Bas
   </a>
   </h3>
-  <div class="row">
     <div class="collapse" id="collapseTB">
-      <div class="col-xs-12 col-lg-6">
         <app-galleria [images]="imagesTB"></app-galleria>
-      </div>
-      <div class="col-xs-12 col-lg-6">
+
         <p>
           Terre de bas est un gîte aménagé avec cœur permettant d’accueillir un couple ou une petite famille.
         </p>
@@ -37,18 +33,14 @@
         95 euros la nuit, 630 euros la semaine
         Charges comprises (eau-électricité-chauffage)
       </div>
-    </div>
-  </div>
   <h3><a data-toggle="collapse" href="#collapseTH" role="button" aria-expanded="false"
          aria-controls="collapseTH">
     Terre-de-Haut
   </a>
   </h3>
-  <div class="row">
     <div class="collapse" id="collapseTH">
-      <div class="col-xs-12 col-lg-6">
+
         <app-galleria [images]="imagesTH"></app-galleria>
-      </div>
 
       <div class="col-xs-12 col-lg-6">
         <p>
@@ -59,7 +51,6 @@
         </p>
         <br>
       </div>
-    </div>
   </div>
 
   <h3><a data-toggle="collapse" href="#collapseTT" role="button" aria-expanded="false"
@@ -68,10 +59,8 @@
   </a>
   </h3>
   <div class="collapse" id="collapseTT">
-    <div class="row">
-      <div class="col-xs-12 col-lg-6">
+
         <app-galleria [images]="imagesTT"></app-galleria>
-      </div>
 
 
       <div class="col-xs-12 col-lg-6">
@@ -83,6 +72,5 @@
         15 euros la nuit, 100 euros la semaine
       </div>
     </div>
-  </div>
 </div>
 
