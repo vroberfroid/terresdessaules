@@ -1,3 +1,4 @@
+<div class="top_space">
 <form [formGroup]="nousForm" (ngSubmit)="onSubmit( 'marie', marie)">
   <textarea [rows]="5" [cols]="200" formControlName="marie"></textarea>
   <button class="btn btn-primary">Submit</button>
@@ -6,5 +7,5 @@
 Result:
 <ngx-md [data]="marie">
 </ngx-md>
-
+</div>
 

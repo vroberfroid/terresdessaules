@@ -11,15 +11,7 @@ export class AdminGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    return this.rightService.isAuthenticated().then(
-      (authenticated: boolean) => {
-        if (authenticated) {
-          return true;
-        } else {
-          return this.router.navigate(['/']);
-        }
-      }
-    );
+    return this.rightService.isAuthenticated();
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {

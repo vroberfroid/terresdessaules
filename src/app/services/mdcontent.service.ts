@@ -6,7 +6,7 @@ import {MdContent} from '../models/mdcontent.model';
 @Injectable({providedIn: 'root'})
 export class MdContentService {
 
-  url = 'http://localhost:8080/content';
+  url = 'https://terre-des-saules.firebaseio.com/puts.json';
 
   constructor(private http: HttpClient) {
   }
@@ -17,6 +17,6 @@ export class MdContentService {
 
   update(name: string, content: string): Observable<MdContent> {
     const postData = {'name' : name, 'content': content};
-    return this.http.put<MdContent>(this.url + '/update', postData);
+    return this.http.put<MdContent>(this.url , postData);
   }
 }

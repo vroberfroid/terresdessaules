@@ -1,15 +1,8 @@
 export class RightService {
   loggedIn = false;
 
-  isAuthenticated() {
-    const promise = new Promise(
-      (resolve, reject) => {
-        setTimeout(() => {
-          resolve(this.loggedIn);
-        }, 800);
-      }
-    );
-    return promise;
+  isAuthenticated(): boolean {
+    return this.loggedIn;
   }
 
   login() {

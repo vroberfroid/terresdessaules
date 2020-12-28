@@ -1,18 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Administration de terre des Saules</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+exit_to_app<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"  >
+  <a class="navbar-brand" href="#">Administration</a>
+
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="position: absolute; right:5px">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button *ngIf="isLogged()" mat-menu-item routerLink="edit">
+    <mat-icon>family_restroom</mat-icon>
+    <span>Nous</span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </div>
-  </div>
+  <button *ngIf="isLogged()" mat-menu-item>
+    <mat-icon>list</mat-icon>
+    <span>Charte</span>
+  </button>
+  <button *ngIf="isLogged()" mat-menu-item>
+    <mat-icon>collections</mat-icon>
+    <span>Images</span>
+  </button>
+  <button *ngIf="!isLogged()" mat-menu-item (click)="onLogin()">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </button>
+  <button *ngIf="isLogged()" mat-menu-item (click)="onLogout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>
 </nav>
-<button class="btn btn-default" (click)="onLogin()">Login</button>
-<button class="btn btn-default" (click)="onLogout()">Logout</button>
+
 <a routerLink="edit">Editor</a>
 <router-outlet></router-outlet>
+

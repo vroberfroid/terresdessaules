@@ -26,6 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MyHammerConfig} from '../my-hammer.config';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    NgxMdModule.forRoot()
+    NgxMdModule.forRoot(),
+    MatIconModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule
   ],
   providers: [
     ImageService,

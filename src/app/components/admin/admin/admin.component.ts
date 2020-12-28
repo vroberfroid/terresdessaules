@@ -22,4 +22,8 @@ export class AdminComponent implements OnInit {
     this.rightService.logout();
     this.router.navigate(['admin']);
   }
+
+  isLogged(): boolean {
+    return this.rightService.isAuthenticated();
+  }
 }
