@@ -6,14 +6,14 @@ div.transbox {
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-div.transbox p {
+:host ::ng-deep div.transbox p {
   margin: 5%;
   font-weight: bold;
   color: #000000;
   text-align: justify;
 }
 
-div.transbox ul {
+:host ::ng-deep div.transbox ul {
   margin: 5%;
   color: #000000;
   text-align: justify;

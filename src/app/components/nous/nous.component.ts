@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdContentService} from '../../services/mdcontent.service';
+import {MdContent} from '../../models/mdcontent.model';
 
 @Component({
   selector: 'app-nous',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NousComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contentService: MdContentService) { }
 
   ngOnInit() {
+  }
+
+  getText(field: string) {
+    this.contentService.get(field, 'nous')
+      .subscribe( (data: MdContent) => {
+        return data.content;
+      });
   }
 
 }

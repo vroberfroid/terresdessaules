@@ -1,11 +1,17 @@
-<div class="top_space">
-<form [formGroup]="nousForm" (ngSubmit)="onSubmit( 'marie', marie)">
-  <textarea [rows]="5" [cols]="200" formControlName="marie"></textarea>
-  <button class="btn btn-primary">Submit</button>
-</form>
+<ng-template *ngIf="readonly; then readonlyTemplate else fullTemplate"></ng-template>
 
-Result:
-<ngx-md [data]="marie">
-</ngx-md>
-</div>
+<ng-template #readonlyTemplate>
+    <ngx-md [data]="content">
+    </ngx-md>
+</ng-template>
+
+<ng-template #fullTemplate>
+  <form [formGroup]="editorForm" (ngSubmit)="onSubmit(field, content)">
+    <textarea [rows]="7" formControlName="field" style="width:100%"></textarea>
+    <b>Resultat:</b>
+      <ngx-md [data]="content">
+      </ngx-md>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</ng-template>
 

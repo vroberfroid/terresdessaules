@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {MdContent} from '../../../models/mdcontent.model';
@@ -11,35 +11,40 @@ import {MdContentService} from '../../../services/mdcontent.service';
 })
 export class EditorComponent implements OnInit, OnDestroy {
 
-  nousForm: FormGroup;
+  editorForm: FormGroup;
 
-  marie = 'Loading...';
+  content = 'Loading...';
+  @Input() path: string;
+  @Input() field: string;
+  @Input() readonly = false;
+
   subscription: Subscription;
   constructor(private contentService: MdContentService) { }
 
   ngOnInit() {
 
-    this.nousForm = new FormGroup({
-      'marie'  : new FormControl(this.marie),
-      'cedric': new FormControl(null),
-      'kids' : new FormControl(null)});
+    this.editorForm = new FormGroup({
+      'field'  : new FormControl(this.content)
+    });
 
-    this.contentService.get('marie')
+    this.contentService.get(this.field, this.path)
       .subscribe( (data: MdContent) => {
-        this.marie = data.content;
-        this.nousForm.get('marie').patchValue(this.marie);
+        if (data) {
+          this.content = data.content;
+          this.editorForm.get('field').patchValue(this.content);
+        }
     });
 
 
-    this.subscription = this.nousForm.get('marie')
+    this.subscription = this.editorForm.get('field')
       .valueChanges.subscribe(
         (data) => {
-          this.marie = data;
+          this.content = data;
         });
   }
 
   onSubmit(name: string, content: string) {
-    this.contentService.update(name, content).subscribe( responseData => {
+    this.contentService.update(name, content, this.path).subscribe( responseData => {
       console.log(responseData);
     });
   }

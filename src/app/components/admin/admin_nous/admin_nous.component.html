@@ -1,0 +1,28 @@
+<div class="top_space">
+  <h3><a data-toggle="collapse" href="#collapseMarie" role="button" aria-expanded="false"
+         aria-controls="collapseMarie">
+    Marie vue par Cédric
+  </a>
+  </h3>
+  <div class="collapse" id="collapseMarie">
+    <app-editor [field]="marie" [path]="path"></app-editor>
+  </div>
+
+  <h3><a data-toggle="collapse" href="#collapseCedric" role="button" aria-expanded="false"
+         aria-controls="collapseCedric">
+    Cédric vu par Marie
+  </a>
+  </h3>
+  <div class="collapse" id="collapseCedric">
+    <app-editor [field]="cedric" [path]="path"></app-editor>
+  </div>
+
+  <h3><a data-toggle="collapse" href="#collapseKids" role="button" aria-expanded="false"
+         aria-controls="collapseKids">
+    Edgard, Alphonse et Maurice
+  </a>
+  </h3>
+  <div class="collapse" id="collapseKids">
+    <app-editor [field]="kids" [path]="path"></app-editor>
+  </div>
+</div>

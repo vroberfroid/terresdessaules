@@ -28,6 +28,8 @@ import {MyHammerConfig} from '../my-hammer.config';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
+import {AdminNousComponent} from './components/admin/admin_nous/admin_nous.component';
+import { AdminCharteComponent } from './components/admin/admin-charte/admin-charte.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
     ChangeOpacityOnmouseoverDirective,
     NotFoundComponent,
     AdminComponent,
-    EditorComponent
+    EditorComponent,
+    AdminNousComponent,
+    AdminCharteComponent
   ],
   imports: [
     BrowserModule,
