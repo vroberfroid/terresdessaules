@@ -10,9 +10,9 @@ import {MenuComponent} from '../components/menu/menu.component';
 import {NotFoundComponent} from '../components/not-found/not-found.component';
 import {AdminComponent} from '../components/admin/admin/admin.component';
 import {AdminGuard} from './admin.guard';
-import {EditorComponent} from '../components/admin/editor/editor.component';
 import {AdminNousComponent} from '../components/admin/admin_nous/admin_nous.component';
 import {AdminCharteComponent} from '../components/admin/admin-charte/admin-charte.component';
+import {AuthComponent} from '../components/admin/auth/auth.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -37,6 +37,7 @@ export const appRoutes: Routes = [
     component: AdminComponent,
     children:
       [ {path: 'admin_nous', component: AdminNousComponent},
-        {path: 'admin_charte', component: AdminCharteComponent}]},
-  { path: '**', redirectTo: 'not-found'}
+        {path: 'admin_charte', component: AdminCharteComponent},
+        {path: 'login', component: AuthComponent}
+        ]}
   ];

@@ -11,7 +11,12 @@ export class AdminGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    return this.rightService.isAuthenticated();
+
+    if ( route.routeConfig.path === 'login') {
+      return true;
+    } else {
+      return this.rightService.isAuthenticated();
+    }
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {

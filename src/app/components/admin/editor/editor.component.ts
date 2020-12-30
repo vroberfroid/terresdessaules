@@ -1,8 +1,11 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {MdContent} from '../../../models/mdcontent.model';
 import {MdContentService} from '../../../services/mdcontent.service';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogEditorComponent} from '../dialog-editor/dialog-editor.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-editor',
@@ -19,7 +22,9 @@ export class EditorComponent implements OnInit, OnDestroy {
   @Input() readonly = false;
 
   subscription: Subscription;
-  constructor(private contentService: MdContentService) { }
+  constructor(private contentService: MdContentService,
+              public dialog: MatDialog,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -33,7 +38,7 @@ export class EditorComponent implements OnInit, OnDestroy {
           this.content = data.content;
           this.editorForm.get('field').patchValue(this.content);
         }
-    });
+    }, error => this.openSnackBar('Problème technique: impossible de visualiser les données.'));
 
 
     this.subscription = this.editorForm.get('field')
@@ -43,10 +48,10 @@ export class EditorComponent implements OnInit, OnDestroy {
         });
   }
 
-  onSubmit(name: string, content: string) {
-    this.contentService.update(name, content, this.path).subscribe( responseData => {
+  onSubmit(field: string, content: string) {
+    this.contentService.update(field, content, this.path).subscribe( responseData => {
       console.log(responseData);
-    });
+    }, error => this.openSnackBar('Problème technique: impossible de mettre à jour.'));
   }
 
   ngOnDestroy(): void {
@@ -55,4 +60,25 @@ export class EditorComponent implements OnInit, OnDestroy {
     }
   }
 
+  openDialog(): void {
+    const mdContent = new MdContent();
+    mdContent.content = this.content;
+    mdContent.field = this.field;
+    const dialogRef = this.dialog.open(DialogEditorComponent, {
+      width: '250px',
+      data: mdContent
+    });
+
+    dialogRef.afterClosed().subscribe((result: MdContent) => {
+      if (result) {
+        this.onSubmit(result.field, result.content);
+        console.log('The dialog was closed. result=' + result);
+      }
+    });
+  }
+
+  private openSnackBar(message: string): Observable<void> {
+    const snackBarRef = this.snackBar.open(message, 'OK');
+    return snackBarRef.onAction();
+  }
 }

@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  <p>Voulez-vous vraiment mettre à jour {{data.field}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Non merci</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

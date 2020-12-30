@@ -30,6 +30,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {_MatMenuDirectivesModule, MatMenuModule} from '@angular/material/menu';
 import {AdminNousComponent} from './components/admin/admin_nous/admin_nous.component';
 import { AdminCharteComponent } from './components/admin/admin-charte/admin-charte.component';
+import { DialogEditorComponent } from './components/admin/dialog-editor/dialog-editor.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthComponent } from './components/admin/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -50,20 +54,27 @@ import { AdminCharteComponent } from './components/admin/admin-charte/admin-char
     AdminComponent,
     EditorComponent,
     AdminNousComponent,
-    AdminCharteComponent
+    AdminCharteComponent,
+    DialogEditorComponent,
+    AuthComponent
+  ],
+  entryComponents: [
+    DialogEditorComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSnackBarModule,
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
     NgxMdModule.forRoot(),
     MatIconModule,
     _MatMenuDirectivesModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [
     ImageService,

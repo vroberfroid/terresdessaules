@@ -6,10 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin_nous.component.scss']
 })
 export class AdminNousComponent implements OnInit {
-  marie = 'marie';
-  cedric = 'cedric';
-  kids = 'kids';
-  path = 'nous';
   constructor() { }
 
   ngOnInit() {

@@ -6,12 +6,12 @@
 </ng-template>
 
 <ng-template #fullTemplate>
-  <form [formGroup]="editorForm" (ngSubmit)="onSubmit(field, content)">
+  <form [formGroup]="editorForm">
     <textarea [rows]="7" formControlName="field" style="width:100%"></textarea>
-    <b>Resultat:</b>
+    <strong>Resultat:</strong>
       <ngx-md [data]="content">
       </ngx-md>
-    <button class="btn btn-primary">Submit</button>
+    <button mat-raised-button class="btn btn-primary" (click)="openDialog()">Submit</button>
   </form>
 </ng-template>
 
