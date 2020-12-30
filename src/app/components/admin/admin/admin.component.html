@@ -21,6 +21,10 @@ exit_to_app<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" 
     <mat-icon>login</mat-icon>
     <span>Login</span>
   </button>
+  <button mat-menu-item routerLink="../">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
   <button *ngIf="isLogged()" mat-menu-item (click)="onLogout()">
     <mat-icon>exit_to_app</mat-icon>
     <span>Logout</span>
