@@ -15,6 +15,7 @@ import {AdminCharteComponent} from '../components/admin/admin-charte/admin-chart
 import {AuthComponent} from '../components/admin/auth/auth.component';
 import {AdminGitesComponent} from '../components/admin/admin-gites/admin-gites.component';
 import {AdminLinksComponent} from '../components/admin/admin-links/admin-links.component';
+import {AdminActivitesComponent} from '../components/admin/admin-activites/admin-activites.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -42,6 +43,7 @@ export const appRoutes: Routes = [
         {path: 'admin_charte', component: AdminCharteComponent},
         {path: 'login', component: AuthComponent},
         {path: 'admin_gites', component: AdminGitesComponent},
-        {path: 'admin_links', component: AdminLinksComponent}
+        {path: 'admin_links', component: AdminLinksComponent},
+        {path: 'admin_activites', component: AdminActivitesComponent}
         ]}
   ];

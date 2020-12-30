@@ -36,6 +36,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthComponent } from './components/admin/auth/auth.component';
 import { AdminGitesComponent } from './components/admin/admin-gites/admin-gites.component';
 import { AdminLinksComponent } from './components/admin/admin-links/admin-links.component';
+import { AdminActivitesComponent } from './components/admin/admin-activites/admin-activites.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { AdminLinksComponent } from './components/admin/admin-links/admin-links.
     DialogEditorComponent,
     AuthComponent,
     AdminGitesComponent,
-    AdminLinksComponent
+    AdminLinksComponent,
+    AdminActivitesComponent
   ],
   entryComponents: [
     DialogEditorComponent
@@ -78,7 +81,8 @@ import { AdminLinksComponent } from './components/admin/admin-links/admin-links.
     MatIconModule,
     _MatMenuDirectivesModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     ImageService,

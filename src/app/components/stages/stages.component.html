@@ -1,9 +1,6 @@
-<div class="bckgstages">
-
-  <div class="container">
-    <p>
-      <span class="glyphicon glyphicon-alert"></span> En cours de construction.
-    </p>
-
+<div class="background" [style.height]="getStyleHeight()">
+  <h2>Activités</h2>
+  <div #content class="transbox">
+    <app-editor field="main" path="activites" readonly="true"></app-editor>
   </div>
 </div>

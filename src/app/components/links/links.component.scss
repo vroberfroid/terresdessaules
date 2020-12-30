@@ -1,29 +1,28 @@
-li {
-  padding-top: 30px;
-  a {
-    display: block;
-
-  }
-}
-
-div.background {
-  background-size: cover;
-  background-position: center center;
-  background-image: url(../../../assets/img/actualites.jpg);
-  data-parallax-speed: "0.8";
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 div.transbox {
   margin: 30px;
   background-color: #ffffff;
   border: 1px solid black;
   opacity: 0.6;
   filter: alpha(opacity=60); /* For IE8 and earlier */
-  p, ul {
-    margin: 5%;
-    color: #000000;
-    text-align: justify;
-  }
 }
 
+:host ::ng-deep div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+  text-align: justify;
+}
+
+:host ::ng-deep div.transbox ul {
+  margin: 5%;
+  color: #000000;
+  text-align: justify;
+}
+
+div.background {
+  background-size: cover;
+  background-position: center center;
+  background-image: url(../../../assets/img/actualites.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

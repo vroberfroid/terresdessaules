@@ -5,6 +5,10 @@ exit_to_app<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" 
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+  <button *ngIf="isLogged()" mat-menu-item routerLink="admin_activites">
+    <mat-icon>event_available</mat-icon>
+    <span>Activités</span>
+  </button>
   <button *ngIf="isLogged()" mat-menu-item routerLink="admin_nous">
     <mat-icon>family_restroom</mat-icon>
     <span>Nous</span>
