@@ -34,6 +34,8 @@ import { DialogEditorComponent } from './components/admin/dialog-editor/dialog-e
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthComponent } from './components/admin/auth/auth.component';
+import { AdminGitesComponent } from './components/admin/admin-gites/admin-gites.component';
+import { AdminLinksComponent } from './components/admin/admin-links/admin-links.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { AuthComponent } from './components/admin/auth/auth.component';
     AdminNousComponent,
     AdminCharteComponent,
     DialogEditorComponent,
-    AuthComponent
+    AuthComponent,
+    AdminGitesComponent,
+    AdminLinksComponent
   ],
   entryComponents: [
     DialogEditorComponent

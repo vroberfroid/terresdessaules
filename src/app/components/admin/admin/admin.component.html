@@ -13,6 +13,14 @@ exit_to_app<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" 
     <mat-icon>list</mat-icon>
     <span>Charte</span>
   </button>
+  <button *ngIf="isLogged()" mat-menu-item routerLink="admin_gites">
+    <mat-icon>night_shelter</mat-icon>
+    <span>Gîtes</span>
+  </button>
+  <button *ngIf="isLogged()" mat-menu-item routerLink="admin_links">
+    <mat-icon>link</mat-icon>
+    <span>Liens</span>
+  </button>
   <button *ngIf="isLogged()" mat-menu-item>
     <mat-icon>collections</mat-icon>
     <span>Images</span>

@@ -13,6 +13,8 @@ import {AdminGuard} from './admin.guard';
 import {AdminNousComponent} from '../components/admin/admin_nous/admin_nous.component';
 import {AdminCharteComponent} from '../components/admin/admin-charte/admin-charte.component';
 import {AuthComponent} from '../components/admin/auth/auth.component';
+import {AdminGitesComponent} from '../components/admin/admin-gites/admin-gites.component';
+import {AdminLinksComponent} from '../components/admin/admin-links/admin-links.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -38,6 +40,8 @@ export const appRoutes: Routes = [
     children:
       [ {path: 'admin_nous', component: AdminNousComponent},
         {path: 'admin_charte', component: AdminCharteComponent},
-        {path: 'login', component: AuthComponent}
+        {path: 'login', component: AuthComponent},
+        {path: 'admin_gites', component: AdminGitesComponent},
+        {path: 'admin_links', component: AdminLinksComponent}
         ]}
   ];

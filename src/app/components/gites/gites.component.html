@@ -1,58 +1,44 @@
-<div class="container" [style.height]="getStyleHeight()">
+<div class="global" [style.height]="getStyleHeight()">
   <h2>Nos gîtes</h2>
   <p>
     Nos gîtes sont construits en pensant à notre belle planète.
     Nous privilégions les matériaux écologiques tels que la chaux, l’argile, le chanvre, le bois.
     Nous remercions chaleureusement Thibaud, notre architecte et géobiologue pour ses précieux conseils.
   </p>
+
+  <!-- Terre de Bas -->
   <h3><a data-toggle="collapse" href="#collapseTB" role="button" aria-expanded="false"
          aria-controls="collapseTB">
     Terre-de-Bas
   </a>
   </h3>
-    <div class="collapse" id="collapseTB">
-        <app-galleria [images]="imagesTB"></app-galleria>
+  <div class="collapse" id="collapseTB">
+    <app-galleria [images]="imagesTB"></app-galleria>
 
-        <p>
-          Terre de bas est un gîte aménagé avec cœur permettant d’accueillir un couple ou une petite famille.
-        </p>
-        <br>
-        <h4>Composition:</h4><br>
-        <dl>
-          <dt>Pièce principale:</dt>
-          <dd>Cuisine bien équipée</dd>
-          <dd>Table et chaises</dd>
-          <dd>Lit de 1m60, literie confortable</dd>
-          <dd>Lit « cabane » de 1m20 pour 1 ou 2 enfants</dd> <br>
-          <dt>Salle de douche avec toilettes</dt>
-          <dd>Douche confortable</dd>
-          <dd>Sèche-cheveux</dd>
-        </dl>
+    <p>
+      Terre de bas est un gîte aménagé avec cœur permettant d’accueillir un couple ou une petite famille.
+    </p>
+    <br>
+    <app-editor readonly="true" path="gites" field="terredebas"></app-editor>
+  </div>
 
-        <h4>Tarif:</h4>
-        95 euros la nuit, 630 euros la semaine
-        Charges comprises (eau-électricité-chauffage)
-      </div>
+  <!-- Terre de Haut -->
   <h3><a data-toggle="collapse" href="#collapseTH" role="button" aria-expanded="false"
          aria-controls="collapseTH">
     Terre-de-Haut
   </a>
   </h3>
-    <div class="collapse" id="collapseTH">
+  <div class="collapse" id="collapseTH">
 
-        <app-galleria [images]="imagesTH"></app-galleria>
+    <app-galleria [images]="imagesTH"></app-galleria>
 
-      <div class="col-xs-12 col-lg-6">
-        <p>
-          Ensemble de gîtes, chambres et grande salle de partage pour une capacité d’accueil de 12 à 14 personnes. Le
-          tout est en construction. La fin des travaux est prévue en 2021.
-          Pour l’instant la maison est la salle de jeux des enfants ainsi qu’un lieu d’accueil chaleureux pour nos
-          familles et nos amis.
-        </p>
-        <br>
-      </div>
+    <div class="col-xs-12 col-lg-6">
+      <app-editor readonly="true" path="gites" field="terredehaut"></app-editor>
+      <br>
+    </div>
   </div>
 
+  <!-- La tente -->
   <h3><a data-toggle="collapse" href="#collapseTT" role="button" aria-expanded="false"
          aria-controls="collapseTT">
     La tente
@@ -60,17 +46,12 @@
   </h3>
   <div class="collapse" id="collapseTT">
 
-        <app-galleria [images]="imagesTT"></app-galleria>
+    <app-galleria [images]="imagesTT"></app-galleria>
 
 
-      <div class="col-xs-12 col-lg-6">
-        <p>
-          Pour les grandes familles, nous proposons une grande et charmante tente berbère équipée d’un poêle à bois. Les
-          enfants l’ adorent et peuvent y dormir confortablement à 4.
-        </p>
-        <h4>Tarif:</h4>
-        15 euros la nuit, 100 euros la semaine
-      </div>
+    <div class="col-xs-12 col-lg-6">
+      <app-editor readonly="true" path="gites" field="tente"></app-editor>
     </div>
+  </div>
 </div>
 
