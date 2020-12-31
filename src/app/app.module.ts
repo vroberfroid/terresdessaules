@@ -38,6 +38,10 @@ import { AdminGitesComponent } from './components/admin/admin-gites/admin-gites.
 import { AdminLinksComponent } from './components/admin/admin-links/admin-links.component';
 import { AdminActivitesComponent } from './components/admin/admin-activites/admin-activites.component';
 import {MatButtonModule} from '@angular/material/button';
+import { AdminImagesComponent } from './components/admin/admin-images/admin-images.component';
+import { ImageEditorComponent } from './components/admin/image-editor/image-editor.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,9 @@ import {MatButtonModule} from '@angular/material/button';
     AuthComponent,
     AdminGitesComponent,
     AdminLinksComponent,
-    AdminActivitesComponent
+    AdminActivitesComponent,
+    AdminImagesComponent,
+    ImageEditorComponent
   ],
   entryComponents: [
     DialogEditorComponent
@@ -82,7 +88,9 @@ import {MatButtonModule} from '@angular/material/button';
     _MatMenuDirectivesModule,
     MatMenuModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     ImageService,

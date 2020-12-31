@@ -1,0 +1,20 @@
+<ng-template *ngIf="readonly; then readonlyTemplate else fullTemplate"></ng-template>
+
+<ng-template #fullTemplate>
+  <form class="input-form" [formGroup]="editorForm">
+    <mat-form-field class="input-full-width">
+      <mat-label>{{label}}</mat-label>
+        <input matInput placeholder="URL de l'image" formControlName="url">
+    </mat-form-field>
+    <button mat-raised-button class="btn btn-primary" (click)="openDialog()">Submit</button>
+    |
+    <button mat-raised-button class="btn btn-primary" (click)="toggleImage()">Overview</button>
+  </form>
+  <div *ngIf="displayImage">
+    <img [src]="url" class="center"/>
+  </div>
+</ng-template>
+
+<ng-template #readonlyTemplate>
+    <img [src]="url" class="center"/>
+</ng-template>

@@ -16,6 +16,7 @@ import {AuthComponent} from '../components/admin/auth/auth.component';
 import {AdminGitesComponent} from '../components/admin/admin-gites/admin-gites.component';
 import {AdminLinksComponent} from '../components/admin/admin-links/admin-links.component';
 import {AdminActivitesComponent} from '../components/admin/admin-activites/admin-activites.component';
+import {AdminImagesComponent} from '../components/admin/admin-images/admin-images.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -44,6 +45,7 @@ export const appRoutes: Routes = [
         {path: 'login', component: AuthComponent},
         {path: 'admin_gites', component: AdminGitesComponent},
         {path: 'admin_links', component: AdminLinksComponent},
-        {path: 'admin_activites', component: AdminActivitesComponent}
+        {path: 'admin_activites', component: AdminActivitesComponent},
+        {path: 'admin_images', component: AdminImagesComponent}
         ]}
   ];

@@ -1,7 +1,7 @@
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img [src]="images[0]" alt="Random first slide" class="img-fluid">
+      <app-image-editor readonly="true" field="accueil1"></app-image-editor>
     </div>
     <div class="carousel-caption">
       <h3>Terre des Saules</h3>
@@ -10,7 +10,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img [src]="images[1]" alt="Random second slide" class="img-fluid">
+      <app-image-editor readonly="true" field="accueil2"></app-image-editor>
     </div>
     <div class="carousel-caption">
       <h3>Terre des Saules</h3>
@@ -19,7 +19,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img [src]="images[2]" alt="Random third slide" class="img-fluid">
+      <app-image-editor readonly="true" field="accueil3"></app-image-editor>
     </div>
     <div class="carousel-caption">
       <h3>Terre des Saules</h3>
@@ -28,7 +28,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img [src]="images[3]" alt="Random third slide" class="img-fluid">
+      <app-image-editor readonly="true" field="accueil4"></app-image-editor>
     </div>
     <div class="carousel-caption">
       <h3>Terre des Saules</h3>

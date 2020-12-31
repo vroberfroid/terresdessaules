@@ -18,9 +18,11 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
-    this.images = ['https://drive.google.com/uc?export=view&id=1sQAabWsk6HmBAfs3lyFK-QyjlAozGhmp',
+    this.images = ['assets/img/accueil1.jpg',
+      'assets/img/accueil2.jpg',
+      // 'https://drive.google.com/uc?export=view&id=1sQAabWsk6HmBAfs3lyFK-QyjlAozGhmp',
       // tslint:disable-next-line:max-line-length
-      'https://drive.google.com/uc?export=view&id=1z2pjzg5TmB8S4Q9nFb-0ya0tTLra8OfL',
+      // 'https://drive.google.com/uc?export=view&id=1z2pjzg5TmB8S4Q9nFb-0ya0tTLra8OfL',
       'assets/img/accueil3.jpg',
       'assets/img/accueil4.jpg'];
   }
