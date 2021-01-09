@@ -42,6 +42,7 @@ import { AdminImagesComponent } from './components/admin/admin-images/admin-imag
 import { ImageEditorComponent } from './components/admin/image-editor/image-editor.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ImagesComponent } from './components/images/images.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {MatInputModule} from '@angular/material/input';
     AdminLinksComponent,
     AdminActivitesComponent,
     AdminImagesComponent,
-    ImageEditorComponent
+    ImageEditorComponent,
+    ImagesComponent
   ],
   entryComponents: [
     DialogEditorComponent

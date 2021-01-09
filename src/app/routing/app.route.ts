@@ -17,6 +17,7 @@ import {AdminGitesComponent} from '../components/admin/admin-gites/admin-gites.c
 import {AdminLinksComponent} from '../components/admin/admin-links/admin-links.component';
 import {AdminActivitesComponent} from '../components/admin/admin-activites/admin-activites.component';
 import {AdminImagesComponent} from '../components/admin/admin-images/admin-images.component';
+import {ImagesComponent} from '../components/images/images.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -31,6 +32,7 @@ export const appRoutes: Routes = [
   { path: 'charte',  component: CharteComponent },
   { path: 'stages',  component: StagesComponent },
   { path: 'gites',  component: GitesComponent },
+  { path: 'images',  component: ImagesComponent },
   { path: 'contact',  component: ContactComponent },
   { path: 'nous',  component: NousComponent },
   { path: 'menu',  component: MenuComponent },
