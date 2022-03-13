@@ -19,6 +19,7 @@ import {AdminActivitesComponent} from '../components/admin/admin-activites/admin
 import {AdminImagesComponent} from '../components/admin/admin-images/admin-images.component';
 import {ImagesComponent} from '../components/images/images.component';
 import {AdminHomeComponent} from '../components/admin/admin-home/admin-home.component';
+import {AdminContactComponent} from '../components/admin/admin-contact/admin-contact.component';
 
 export const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -50,6 +51,7 @@ export const appRoutes: Routes = [
         {path: 'admin_links', component: AdminLinksComponent},
         {path: 'admin_activites', component: AdminActivitesComponent},
         {path: 'admin_images', component: AdminImagesComponent},
-        {path: 'admin_home', component: AdminHomeComponent}
+        {path: 'admin_home', component: AdminHomeComponent},
+        {path: 'admin_contact', component: AdminContactComponent}
         ]}
   ];

@@ -20,6 +20,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   @Input() path: string;
   @Input() field: string;
   @Input() readonly = false;
+  @Input() rows = 7;
 
   subscription: Subscription;
   constructor(private contentService: MdContentService,

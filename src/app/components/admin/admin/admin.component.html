@@ -29,6 +29,10 @@ exit_to_app<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" 
     <mat-icon>collections</mat-icon>
     <span>Images</span>
   </button>
+  <button *ngIf="isLogged()" mat-menu-item routerLink="admin_contact">
+    <mat-icon>email</mat-icon>
+    <span>Contacts</span>
+  </button>
   <button *ngIf="isLogged()" mat-menu-item routerLink="admin_home">
     <mat-icon>home</mat-icon>
     <span>Home</span>

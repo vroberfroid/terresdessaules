@@ -44,6 +44,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ImagesComponent } from './components/images/images.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { AdminContactComponent } from './components/admin/admin-contact/admin-contact.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { AdminHomeComponent } from './components/admin/admin-home/admin-home.com
     AdminImagesComponent,
     ImageEditorComponent,
     ImagesComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminContactComponent
   ],
   entryComponents: [
     DialogEditorComponent
